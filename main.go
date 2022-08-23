@@ -2,27 +2,29 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
-func hello(name string) { println("Olá", name, ", tudo bem?") }
-func sum(a, b int) int {
-	fmt.Print("Sua idade atual é:")
-	return a + b
-}
-func convertAndSum(a int, b string) (total int, err error) {
-	i, err := strconv.Atoi(b)
-	if err != nil {
-		return
-	}
-	total = a + i
-
-	return
-}
 func main() {
-	hello("Hugão")
-	fmt.Println(sum(4, 2))
-	total, err := convertAndSum(10, "15")
-	fmt.Println("convertendo string em inteiro mais soma, é igual a :", total, err)
+
+	a, b := 15, 15
+
+	switch {
+	case a > b:
+		fmt.Println("A é mais velho que B.")
+	case a < b:
+		fmt.Println("A é mais novo que B.")
+
+	default:
+		fmt.Println("A e B tem a mesma idade.")
+
+	}
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+	nomes := []string{"Paulo", "Priscila", "Hugo", "Pandora"}
+
+	for i := 0; i < len(nomes); i++ {
+		fmt.Println(nomes[i])
+	}
 
 }
